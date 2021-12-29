@@ -1,0 +1,21 @@
+import datetime
+diae, diae2 = input().split()
+horarioe = (input().split(' : '))
+X = int(horarioe[0])
+Y = int(horarioe[1])
+Z = int(horarioe[2])
+dias, dias2 = input().split()
+horarios = (input().split(' : '))
+A = int(horarios[0])
+B = int(horarios[1])
+C = int(horarios[2])
+delta = datetime.timedelta(days=int(diae2),seconds=Z,minutes=Y,hours=X)
+delta2 = datetime.timedelta(days=int(dias2),seconds=C, minutes=B,hours=A)
+deltaT = delta2 - delta
+s = deltaT.seconds
+horas, coringa =divmod(s,3600)
+minuto, segundo = divmod(coringa,60)
+print(int(deltaT.days), "dia(s)")
+print(int(horas),"hora(s)")
+print(int(minuto),"minuto(s)")
+print(int(segundo),"segundo(s)")
